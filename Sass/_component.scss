@@ -12,6 +12,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  max-width: 1200px;
   &__content {
     display: flex;
     flex-direction: column;
@@ -68,6 +69,7 @@ body {
       &-item {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 4rem;
         &-value {
           color: #fff;

@@ -97,6 +97,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  max-width: 1200px;
 }
 .main__content {
   display: flex;
@@ -156,6 +157,7 @@ body {
 .main__content-todos-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4rem;
 }
 .main__content-todos-item-value {
@@ -196,7 +198,7 @@ body {
 }
 
 button {
-  font-weight: fw-700;
+  font-weight: 400;
 }
 
 button:hover {

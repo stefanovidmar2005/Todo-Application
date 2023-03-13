@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Application</title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="CSS/style.css" />
+    <!-- Scripts -->
+    <script src="JS/script.js"></script>
+  </head>
+  <body>
+    <!-- Container -->
+    <main class="main">
+      <!-- Content Within The Container -->
+      <div class="main__content">
+        <!-- Header Within The Container -->
+        <h1 class="main__content-header">Todo List</h1>
+        <!-- Alert Message -->
+        <h3 class="main__content-alert">Alert Message</h3>
+        <!-- Text Input Container -->
+        <div class="input__form">
+          <input
+            class="input__form-text"
+            placeholder="Add a todo..."
+            type="text"
+            name="todo"
+            id="todo"
+          />
+          <button class="input__form-button">+</button>
+        </div>
+        <!-- Delete All Todos Button -->
+        <button class="main__content-delete-button">Delete All</button>
+        <!-- List Holding The Todos -->
+        <ul class="main__content-todos">
+          <!-- Todo Within The List Item -->
+          <li class="main__content-todos-item">
+            <!-- Todo Value -->
+            <p class="main__content-todos-item-value">Walk the Dog</p>
+            <!-- Button Functionality For The Todos -->
+            <div class="main__content-todos-item-buttons">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </li>
+          <li class="main__content-todos-item">
+            <!-- Todo Value -->
+            <p class="main__content-todos-item-value">Walk the Dog</p>
+            <!-- Button Functionality For The Todos -->
+            <div class="main__content-todos-item-buttons">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </li>
+          <li class="main__content-todos-item">
+            <!-- Todo Value -->
+            <p class="main__content-todos-item-value">Walk the Dog</p>
+            <!-- Button Functionality For The Todos -->
+            <div class="main__content-todos-item-buttons">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </li>
+          <li class="main__content-todos-item">
+            <!-- Todo Value -->
+            <p class="main__content-todos-item-value">Walk the Dog</p>
+            <!-- Button Functionality For The Todos -->
+            <div class="main__content-todos-item-buttons">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

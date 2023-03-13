@@ -1,0 +1,22 @@
+@import "variables";
+::placeholder {
+  color: #fff;
+}
+
+.success {
+  color: $light-green-color;
+}
+
+.error {
+  color: $light-red-color;
+}
+
+button {
+  font-weight: fw-700;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  opacity: 0.85;
+  transition: all 0.3s ease-in-out;
+}

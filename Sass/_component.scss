@@ -1,0 +1,99 @@
+@import "variables";
+body {
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family;
+}
+.main {
+  background-color: $primary-color;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-header {
+      color: #fff;
+      letter-spacing: 3px;
+    }
+    &-alert {
+      padding: 0.75rem 0;
+      margin-bottom: 1rem;
+    }
+    .input__form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      font-size: $default-font-size;
+      margin-bottom: 2rem;
+    }
+    .input__form-text {
+      border-radius: 5px;
+      background-color: $secondary-color;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 0.65rem 1rem;
+    }
+    .input__form-button {
+      font-size: 2rem;
+      background-color: $light-green-color;
+      border: 0;
+      border-radius: 5px;
+      width: 5rem;
+      height: 3.5rem;
+      cursor: pointer;
+      color: #fff;
+    }
+    &-delete-button {
+      color: #fff;
+      align-self: flex-start;
+      background-color: $light-red-color;
+      border: 0;
+      border-radius: 3px;
+      margin-bottom: 3rem;
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+    }
+    &-todos {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        &-value {
+          color: #fff;
+        }
+        &-buttons {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          .delete {
+            color: #fff;
+            background-color: $light-red-color;
+            border: 0;
+            border-radius: 3px;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+          }
+          .edit {
+            color: #fff;
+            cursor: pointer;
+            background-color: $light-green-color;
+            border: 0;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}

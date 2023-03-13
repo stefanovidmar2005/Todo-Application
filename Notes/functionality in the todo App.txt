@@ -1,0 +1,30 @@
+functionality in the todo App
+	
+	-Add a todo
+	-remove a todo
+	-edit a todo
+	-cross off a todo when completed
+	- a separate array holding a ID to each list item that identifies their uniqueness therefore we are able to refer to that specific todo when using the functionality
+
+1. Data Structure to use Array
+	-in order to push values received from the input to the array.
+	-and also remove all the todos inside the array with the delete all button
+	- edit still figuring  out the functionality
+
+2. Add todo Functionality {
+	-add validation in order to check wether the user clicked on add todo and the input value was empty then we should fire a alert
+	-push the todo value to the array holding all the todos so we are able to delete all of them later on
+	-after todo is validated we want to generate a list item with the classes we assigned to them we could use InsertAdjenct HTML
+	-we also want to clear the input after its filled through 
+	-we also want to blur off the input field so that it provides a better user experience
+	-
+}
+
+3. remove a todo Functionality {
+	-when the user removes a specific  TODo we want to remove it from the array
+	-we also want to remove the actual list item displayed in the HTML throuhg remove() method
+}
+
+4. Cross off a todo {
+ when the user checks on the checkbox the text inside the todo should be crossed off but not removed from the array storing all the todos
+}

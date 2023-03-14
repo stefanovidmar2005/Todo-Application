@@ -2,7 +2,6 @@
 // SELECTIONS
 // Todo alert message
 const alertMessage = document.querySelector(".main__content-alert");
-alertMessage.textContent = "";
 // todos list
 const todoList = document.querySelector(".main__content-todos");
 // Todo Add Button
@@ -25,8 +24,8 @@ function getRandomId() {
 
 // Array to keep track of all todos
 let todos = [];
+let targetTodo;
 
-let todosObject;
 // Init Function to reset the container of todos to be empty so we can generate new ones && remove alert Messages
 const init = function () {
   alertMessage.innerHTML = "";
@@ -44,7 +43,26 @@ const alertMessageTimeout = function () {
 
 // Displaying Todo when user clicks on the plus symbol
 const displayTodo = () => {
-  if (todoInputField.value === "") {
+  // Edit Functionality
+
+  //     1. when the user clicks on the checkbox the todo should be changed to the new value the user inputted & the todo array should also be updated with the new value
+  if (todoAdd.innerHTML === "✅" && todoInputField.value !== "") {
+    todos.forEach((todo) => {
+      let td = targetTodo.querySelector("p").textContent;
+      let todoDescription = todo.innerHTML;
+      const newStr = todoDescription.replace(td, todoInputField.value);
+      targetTodo.querySelector("p").innerHTML = todoInputField.value;
+      todoInputField.blur();
+      todoAdd.innerHTML = "+";
+      alertMessage.innerHTML = "Your Todo Has Been Edited!";
+      alertMessageTimeout();
+      if (alertMessage.classList.contains("error")) {
+        alertMessage.classList.remove("error");
+      }
+      alertMessage.classList.add("success");
+    });
+    todoInputField.value = "";
+  } else if (todoInputField.value === "") {
     alertMessage.textContent = "Todo Cannot Be Blank!";
     alertMessageTimeout();
     alertMessage.classList.add("error");
@@ -105,21 +123,28 @@ deleteAllTodos.addEventListener("click", function (e) {
 // event Delegation
 
 todoList.addEventListener("click", function (e) {
-  if (!e.target.classList.contains("delete")) return;
-  // Element value for the lookup inside the array
-  const target = e.target.parentElement.parentElement.querySelector(
-    ".main__content-todos-item-value"
-  ).textContent;
+  // Delete Individual Todo Functionality
+  if (e.target.classList.contains("delete")) {
+    // Element value for the lookup inside the array
+    const target = e.target.parentElement.parentElement.querySelector(
+      ".main__content-todos-item-value"
+    ).textContent;
 
-  // todoList.forEach((todo) => (todo.dataset.id = getRandomId()));
-  const targetEl = e.target.parentElement.parentElement;
-  // All List Items within the Unordered List
-  const listItems = [...targetEl.parentElement.querySelectorAll("li")];
+    // todoList.forEach((todo) => (todo.dataset.id = getRandomId()));
+    const targetEl = e.target.parentElement.parentElement;
+    // All List Items within the Unordered List
+    const listItems = [...targetEl.parentElement.querySelectorAll("li")];
 
-  const filteredTodos = listItems.filter(
-    (list) => list.dataset.id !== targetEl.dataset.id
-  );
-  console.log(filteredTodos);
-  todos = filteredTodos;
-  targetEl.remove();
+    const filteredTodos = listItems.filter(
+      (list) => list.dataset.id !== targetEl.dataset.id
+    );
+    todos = filteredTodos;
+    targetEl.remove();
+  }
+  // Edit Todo Functionality
+  if (e.target.classList.contains("edit")) {
+    targetTodo = e.target.parentElement.parentElement;
+    todoAdd.innerHTML = "✅";
+    todoInputField.value = targetTodo.querySelector("p").textContent;
+  } else return;
 });
